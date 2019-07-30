@@ -6,4 +6,4 @@
 
 import "sanitize.css"
 import "./src/styles/global.css"
-import "./src/assets/webfontkit/stylesheet.css"
+import "./src/assets/fonts/stylesheet.css"

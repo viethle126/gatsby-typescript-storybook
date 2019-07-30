@@ -1,8 +1,9 @@
 import "sanitize.css"
 import "../src/styles/global.css"
-import "../src/assets/webfontkit/stylesheet.css"
+import "../src/assets/fonts/stylesheet.css"
 import { configure, action, addParameters } from "@storybook/react"
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport"
+import * as R from "ramda"
 
 // automatically import all files ending in *.stories.js
 const req = require.context("../src", true, /.stories.tsx$/)
@@ -27,22 +28,37 @@ window.___navigate = pathname => {
   action("NavigateTo:")(pathname)
 }
 
-const newViewports = {
-  widescreen: {
-    name: "Widescreen",
+const styleOverrides = {
+  border: "1px solid #888",
+  boxShadow: "0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)",
+  transition: "none",
+}
+
+const viewportsWithOverrides = R.map(viewport => ({
+  ...viewport,
+  styles: {
+    ...viewport.styles,
+    ...styleOverrides,
+  },
+}))(INITIAL_VIEWPORTS)
+
+const updatedViewports = {
+  responsive: {
+    name: "Responsive",
     styles: {
-      width: "1600px",
-      height: "1200px",
+      width: "100%",
+      height: "100%",
+      border: "none",
+      boxShadow: "none",
+      transition: "none",
     },
   },
+  ...viewportsWithOverrides,
 }
 
 addParameters({
   viewport: {
-    viewports: {
-      ...INITIAL_VIEWPORTS,
-      ...newViewports,
-    },
+    viewports: updatedViewports,
   },
 })
 
