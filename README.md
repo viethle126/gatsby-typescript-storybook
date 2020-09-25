@@ -1,1 +1,1 @@
-Gatsby starter with Typescript, Storybook and Styled Components
+# Gatsby starter with Typescript, Storybook and Styled Components

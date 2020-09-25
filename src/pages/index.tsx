@@ -1,18 +1,33 @@
 import React from "react"
+import styled from "styled-components"
+import { up } from "styled-breakpoints"
+import { h1 } from "../constants/typography"
+import Layout from "../components/Layout"
+import Helmet from "../components/Helmet"
 
-import Layout from "../components/boilerplate/layout"
-import Image from "../components/boilerplate/image"
-import SEO from "../components/boilerplate/seo"
+const Container = styled.div`
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: calc(100vh - 60px - 84px);
+  padding: 0 20px;
+
+  ${up("laptop")} {
+    height: calc(100vh - 72px - 148px);
+    padding: 0;
+  }
+`
+
+const H1 = styled.h1`
+  ${h1}
+`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi peoplees</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
+    <Helmet title="Home" />
+    <Container>
+      <H1>Gatsby Typescript Storybook Starter</H1>
+    </Container>
   </Layout>
 )
 
