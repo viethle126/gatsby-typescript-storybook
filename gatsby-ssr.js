@@ -1,10 +1,15 @@
 import "sanitize.css"
-import "./src/styles/global.css"
 import "./src/assets/fonts/stylesheet.css"
 import React from "react"
 import { ThemeProvider } from "styled-components"
-import theme from "./src/styles/Theme"
+import Theme from "./src/styles/Theme"
+import GlobalStyle from "./src/styles/GlobalStyle"
 
 export const wrapRootElement = ({ element }) => {
-  return <ThemeProvider theme={theme}>{element}</ThemeProvider>
+  return (
+    <ThemeProvider theme={Theme}>
+      <GlobalStyle />
+      {element}
+    </ThemeProvider>
+  )
 }

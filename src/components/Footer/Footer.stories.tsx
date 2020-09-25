@@ -1,12 +1,11 @@
 import React from "react"
 import { Meta } from "@storybook/react/types-6-0"
-import { ThemeDecorator, mobileViewportParams } from "../../utils/Storybook"
+import { mobileViewportParams } from "../../utils/Storybook"
 import Footer from "./index"
 
 export default {
   title: "Layout/Footer",
   component: Footer,
-  decorators: [ThemeDecorator],
 } as Meta
 
 export const Default = () => <Footer />

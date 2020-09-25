@@ -1,8 +1,5 @@
-import React from "react"
-import { ThemeProvider } from "styled-components"
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport"
 import { FluidObject } from "gatsby-image"
-import theme from "../styles/Theme"
 
 const styleOverrides = {
   border: "1px solid #888",
@@ -56,9 +53,3 @@ export const gatsbyFluidImage = (
   sizes: "",
   srcSet: "",
 })
-
-export const ThemeDecorator = (Story: any) => (
-  <ThemeProvider theme={theme}>
-    <Story />
-  </ThemeProvider>
-)

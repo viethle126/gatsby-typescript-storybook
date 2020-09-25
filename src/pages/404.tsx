@@ -6,14 +6,13 @@ import Layout from "../components/Layout"
 import Helmet from "../components/Helmet"
 
 const Container = styled.div`
+  flex-grow: 1;
   align-items: center;
   justify-content: center;
   display: flex;
-  height: calc(100vh - 60px - 84px);
   padding: 0 20px;
 
   ${up("laptop")} {
-    height: calc(100vh - 72px - 148px);
     padding: 0;
   }
 `
